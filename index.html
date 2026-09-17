@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dream Studio Design progetta e realizza saloni professionali: layout, render, arredi e installazione per parrucchieri e beauty salon nel Nord-Est.">
+  <title>Dream Studio Design — Progettazione e realizzazione saloni</title>
+  <style>
+    :root {
+      --bg: #f3f0ea;
+      --paper: #fbfaf7;
+      --ink: #171717;
+      --muted: #66635f;
+      --line: #d9d4cb;
+      --accent: #ab7d57;
+      --dark: #1d1d1b;
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(243,240,234,.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(23,23,23,.08);
+    }
+
+    .nav {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 1.2;
+    }
+
+    .brand strong { font-size: 18px; letter-spacing: .17em; }
+
+    .menu { display: flex; gap: 28px; align-items: center; font-size: 14px; }
+    .menu a { opacity: .74; }
+    .menu a:hover { opacity: 1; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: #fff;
+      transition: .2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn.light { background: transparent; color: var(--ink); }
+
+    .hero {
+      min-height: calc(100vh - 74px);
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: stretch;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-copy {
+      padding: 96px max(40px, calc((100vw - var(--max))/2)) 74px max(20px, calc((100vw - var(--max))/2));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      margin-bottom: 28px;
+      color: var(--muted);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 400;
+      letter-spacing: -.035em;
+    }
+
+    h1 {
+      font-size: clamp(52px, 7vw, 104px);
+      line-height: .93;
+      max-width: 900px;
+      margin-bottom: 32px;
+    }
+
+    .lead {
+      max-width: 680px;
+      font-size: clamp(18px, 2vw, 25px);
+      color: #3e3c39;
+      margin-bottom: 36px;
+    }
+
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+    .hero-visual {
+      min-height: 680px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(140deg, rgba(0,0,0,.12), rgba(0,0,0,.35)),
+        linear-gradient(145deg, #a99583 0%, #d8cbbd 38%, #7b6c60 39%, #ad9886 67%, #3a3633 68%, #6a625b 100%);
+    }
+
+    .hero-visual::before,
+    .hero-visual::after {
+      content: '';
+      position: absolute;
+      border: 1px solid rgba(255,255,255,.4);
+    }
+
+    .hero-visual::before { inset: 8% 10% 38% 16%; }
+    .hero-visual::after { inset: 39% 16% 10% 8%; }
+
+    .placeholder-note {
+      position: absolute;
+      left: 28px;
+      bottom: 24px;
+      color: white;
+      max-width: 290px;
+      font-size: 13px;
+      letter-spacing: .04em;
+    }
+
+    section { padding: 110px 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: .55fr 1.45fr;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1;
+      max-width: 760px;
+      margin-bottom: 0;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: var(--muted);
+      padding-top: 8px;
+    }
+
+    .project-types {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .type-card {
+      min-height: 300px;
+      padding: 30px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: .25s ease;
+      background: rgba(255,255,255,.12);
+    }
+
+    .type-card:hover { background: var(--paper); transform: translateY(-3px); }
+    .type-card span { font-size: 12px; color: var(--muted); }
+    .type-card h3 { font-size: 30px; font-weight: 400; margin: 0 0 14px; }
+    .type-card p { color: var(--muted); margin: 0; }
+
+    .projects { background: var(--dark); color: white; }
+    .projects .section-kicker, .projects .muted { color: #aaa69f; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 24px;
+    }
+
+    .project-card { position: relative; min-height: 540px; overflow: hidden; background: #34312e; }
+    .project-card.small { min-height: 540px; }
+    .project-art {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 45%, rgba(0,0,0,.72)),
+        linear-gradient(135deg, #6c625a, #c9b69f 45%, #46403b 46%, #81766d 76%, #292725 77%);
+      transform: scale(1.02);
+      transition: .5s ease;
+    }
+    .project-card:nth-child(2) .project-art {
+      background:
+        linear-gradient(180deg, transparent 42%, rgba(0,0,0,.75)),
+        linear-gradient(45deg, #272727, #80756d 35%, #d8c4aa 36%, #8a7561 60%, #35302c 61%);
+    }
+    .project-card:hover .project-art { transform: scale(1.055); }
+    .project-caption { position: absolute; left: 28px; right: 28px; bottom: 26px; z-index: 2; }
+    .project-caption .meta { font-size: 12px; text-transform: uppercase; letter-spacing: .12em; opacity: .72; }
+    .project-caption h3 { font-size: 32px; margin: 8px 0 0; font-weight: 400; }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .step { padding: 28px 24px 46px 0; border-bottom: 1px solid var(--line); }
+    .step .n { font-size: 12px; color: var(--muted); margin-bottom: 48px; }
+    .step h3 { font-size: 22px; font-weight: 500; }
+    .step p { color: var(--muted); margin-bottom: 0; max-width: 260px; }
+
+    .proof {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      min-height: 580px;
+      padding: 0;
+      background: var(--paper);
+    }
+
+    .proof-art {
+      min-height: 580px;
+      background: linear-gradient(135deg, #d8d0c7, #7c7065 42%, #cab59d 43%, #5c544d 74%, #282624 75%);
+      position: relative;
+    }
+
+    .proof-copy { padding: 80px min(8vw, 110px); display: flex; flex-direction: column; justify-content: center; }
+    .proof-copy h2 { font-size: clamp(42px, 5vw, 68px); line-height: 1; }
+    .proof-copy p { color: var(--muted); max-width: 620px; font-size: 18px; }
+
+    .quote {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px;
+      line-height: 1.35;
+    }
+
+    .contact { background: #d9c9b8; }
+    .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; }
+    .contact h2 { font-size: clamp(48px, 6vw, 78px); line-height: .98; }
+    .contact p { max-width: 520px; font-size: 18px; }
+
+    .form { display: grid; gap: 16px; }
+    .field { display: grid; gap: 8px; }
+    .field label { font-size: 12px; text-transform: uppercase; letter-spacing: .1em; }
+    .field input, .field textarea, .field select {
+      width: 100%;
+      background: rgba(255,255,255,.32);
+      border: 0;
+      border-bottom: 1px solid rgba(23,23,23,.5);
+      padding: 16px 2px;
+      outline: none;
+    }
+    .field textarea { min-height: 110px; resize: vertical; }
+    .form-note { font-size: 12px; color: #5b5148; }
+
+    footer { padding: 40px 0; background: var(--dark); color: #d5d2cc; }
+    .footer-grid { display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap; font-size: 13px; }
+
+    .mobile-toggle { display: none; }
+
+    @media (max-width: 900px) {
+      .menu { display: none; }
+      .mobile-toggle { display: inline-flex; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-copy { padding: 80px 20px 60px; }
+      .hero-visual { min-height: 62vh; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .project-types { grid-template-columns: repeat(2, 1fr); }
+      .project-grid, .proof, .contact-grid { grid-template-columns: 1fr; }
+      .method-grid { grid-template-columns: repeat(2, 1fr); }
+      .proof-art { min-height: 420px; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      section { padding: 78px 0; }
+      h1 { font-size: 54px; }
+      .project-types, .method-grid { grid-template-columns: 1fr; }
+      .type-card { min-height: 240px; }
+      .project-card, .project-card.small { min-height: 430px; }
+      .proof-copy { padding: 60px 22px; }
+      .contact-grid { gap: 48px; }
+      .nav .btn { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="#top" class="brand" aria-label="Dream Studio Design">
+        <strong>Dream</strong>
+        <span>Studio Design</span>
+      </a>
+      <nav class="menu" aria-label="Navigazione principale">
+        <a href="#progetti">Progetti</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#metodo">Metodo</a>
+        <a href="#studio">Studio</a>
+      </nav>
+      <a class="btn" href="#contatti">Parliamo del progetto</a>
+      <a class="mobile-toggle" href="#contatti">Contatti</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Progettazione · Arredo · Realizzazione</div>
+        <h1>Progettiamo saloni che funzionano davvero.</h1>
+        <p class="lead">Layout, render, arredi e installazione per parrucchieri e beauty salon. Un unico percorso, dalla prima idea alla consegna.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#contatti">Parliamo del tuo progetto</a>
+          <a class="btn light" href="#progetti">Guarda i progetti</a>
+        </div>
+      </div>
+      <div class="hero-visual" role="img" aria-label="Segnaposto per fotografia di un progetto Dream Studio Design">
+        <div class="placeholder-note">Qui va una fotografia reale, forte, a tutta altezza. Niente stock nella versione definitiva.</div>
+      </div>
+    </section>
+
+    <section id="servizi">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Da dove partiamo</div>
+          <h2>Che progetto hai in mente?</h2>
+        </div>
+        <div class="project-types">
+          <a href="#contatti" class="type-card">
+            <span>01</span>
+            <div><h3>Nuova apertura</h3><p>Dallo spazio vuoto al salone pronto: flussi, layout, impianti, arredo e installazione.</p></div>
+          </a>
+          <a href="#contatti" class="type-card">
+            <span>02</span>
+            <div><h3>Restyling</h3><p>Rinnoviamo le aree che incidono di più sulla percezione del cliente senza rifare tutto.</p></div>
+          </a>
+          <a href="#contatti" class="type-card">
+            <span>03</span>
+            <div><h3>Ristrutturazione</h3><p>Ripensiamo il salone esistente con un progetto coordinato, funzionale e coerente.</p></div>
+          </a>
+          <a href="#contatti" class="type-card">
+            <span>04</span>
+            <div><h3>Layout & arredo</h3><p>Ottimizziamo postazioni, lavaggi, reception, attesa e percorsi operativi.</p></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="progetti">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Lavori reali</div>
+          <h2>Non una gallery. Casi studio.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-art" aria-hidden="true"></div>
+            <div class="project-caption">
+              <div class="meta">Progetto reale da inserire · Friuli Venezia Giulia</div>
+              <h3>Da salone datato a spazio contemporaneo</h3>
+            </div>
+          </article>
+          <article class="project-card small">
+            <div class="project-art" aria-hidden="true"></div>
+            <div class="project-caption">
+              <div class="meta">Progetto reale da inserire · Veneto</div>
+              <h3>Nuova apertura, flussi studiati da zero</h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="metodo">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-kicker">Come lavoriamo</div>
+          <h2>Dal primo sopralluogo all’installazione.</h2>
+        </div>
+        <div class="method-grid">
+          <div class="step"><div class="n">01</div><h3>Prima valutazione</h3><p>Capire obiettivi, spazio, tempi e livello di intervento.</p></div>
+          <div class="step"><div class="n">02</div><h3>Sopralluogo</h3><p>Misure, vincoli tecnici, impianti, flussi e criticità del locale.</p></div>
+          <div class="step"><div class="n">03</div><h3>Concept & layout</h3><p>Organizziamo gli spazi in funzione del lavoro e dell’esperienza cliente.</p></div>
+          <div class="step"><div class="n">04</div><h3>Render</h3><p>Visualizziamo il progetto prima delle decisioni definitive.</p></div>
+          <div class="step"><div class="n">05</div><h3>Arredi</h3><p>Selezione di postazioni, lavaggi, reception, attesa e finiture.</p></div>
+          <div class="step"><div class="n">06</div><h3>Coordinamento</h3><p>Allineiamo forniture e aspetti tecnici per ridurre errori e sorprese.</p></div>
+          <div class="step"><div class="n">07</div><h3>Installazione</h3><p>Consegna e montaggio degli elementi previsti dal progetto.</p></div>
+          <div class="step"><div class="n">08</div><h3>Salone pronto</h3><p>Uno spazio coerente con il livello del servizio che vuoi offrire.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" id="studio">
+      <div class="proof-art" role="img" aria-label="Segnaposto per dettaglio di un progetto o ritratto dello studio"></div>
+      <div class="proof-copy">
+        <div class="eyebrow">Dream Studio Design</div>
+        <h2>25 anni nel mondo dei saloni. Non solo arredo.</h2>
+        <p>Il valore non è scegliere una poltrona da catalogo. È capire come deve funzionare il salone, come deve essere percepito e come accompagnare il titolare nelle decisioni progettuali e tecniche.</p>
+        <div class="quote">“Il progetto deve migliorare lo spazio, ma anche il modo in cui il salone lavora e viene percepito.”</div>
+      </div>
+    </section>
+
+    <section id="contatti" class="contact">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="eyebrow">Prima valutazione</div>
+          <h2>Devi aprire o rinnovare il tuo salone?</h2>
+          <p>Raccontaci dove sei e che cosa vuoi cambiare. Il primo passo è capire se e come possiamo costruire il progetto insieme.</p>
+        </div>
+        <form class="form" onsubmit="event.preventDefault(); document.getElementById('demo-msg').hidden=false;">
+          <div class="field">
+            <label for="name">Nome</label>
+            <input id="name" name="name" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="contact">Telefono o email</label>
+            <input id="contact" name="contact" required>
+          </div>
+          <div class="field">
+            <label for="project">Tipo di progetto</label>
+            <select id="project" name="project">
+              <option>Nuova apertura</option>
+              <option>Restyling</option>
+              <option>Ristrutturazione completa</option>
+              <option>Layout e arredo</option>
+              <option>Non lo so ancora</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="message">Raccontaci il progetto</label>
+            <textarea id="message" name="message"></textarea>
+          </div>
+          <button class="btn" type="submit">Richiedi un primo confronto</button>
+          <div class="form-note">Bozza statica: il form non invia ancora dati. Serve solo per valutare struttura e conversione.</div>
+          <div class="form-note" id="demo-msg" hidden>Messaggio demo: il modulo verrà collegato solo nella fase successiva.</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>Dream Studio Design</div>
+      <div>Hair · Beauty · Wellness — Nord-Est</div>
+      <div>Bozza strategica / frontend statico</div>
+    </div>
+  </footer>
+</body>
+</html>
