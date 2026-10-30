@@ -1,0 +1,26 @@
+/* Preferenze cookie, coordinate con il tema blu armonizzato */
+.cookie-floating{position:fixed;left:18px;bottom:18px;z-index:89;padding:10px 15px;border:1px solid #cbd5e8;border-radius:3px;color:#1D2664;background:#fff;font:600 12px Arial,sans-serif;box-shadow:0 5px 20px #14204a30;cursor:pointer}
+.cookie-floating:focus-visible,.cookie-action:focus-visible,.cookie-close:focus-visible{outline:3px solid #4f6daa;outline-offset:3px}
+.cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:90;max-height:90vh;overflow-y:auto;padding:16px;background:#151d4d30;box-shadow:0 -10px 40px #151d4d30}
+.cookie-banner[hidden],.cookie-settings[hidden]{display:none!important}
+.cookie-inner{position:relative;max-width:1100px;margin:auto;padding:25px;background:#f5f7fd;color:#1D2664;border:1px solid #cbd5e8;border-radius:4px}
+.cookie-heading{font:400 30px Georgia,serif;margin:0 45px 10px 0}
+.cookie-inner p{max-width:900px;font-size:14px;line-height:1.6;color:#3c4a6e}
+.cookie-links a,.privacy-footer-links a{text-decoration:underline;text-underline-offset:3px}
+.cookie-close{position:absolute;top:12px;right:14px;width:38px;height:38px;background:#e8eef9;color:#1D2664;border:1px solid #cbd5e8;font-size:25px;cursor:pointer}
+.cookie-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.cookie-action{min-height:45px;padding:11px 22px;background:#1D2664;color:white;border:1px solid #1D2664;border-radius:2px;font-size:13px;font-weight:600;cursor:pointer}
+.cookie-action:hover{background:#35499d}
+.cookie-customize{background:transparent;color:#1D2664}
+.cookie-customize:hover{background:#e8eef9}
+.cookie-settings{margin-top:16px;padding:16px;background:#e8eef9;border:1px solid #cbd5e8}
+.cookie-settings label{display:block;margin:10px 0;font-size:14px;cursor:pointer}
+.cookie-settings input{width:17px;height:17px;vertical-align:middle;accent-color:#1D2664}
+.privacy-footer-links{display:flex;gap:18px;flex-wrap:wrap;padding:18px 0;border-top:1px solid #354475;font-size:12px}
+.privacy-footer-links a,.privacy-footer-links button{color:#dbe4f7;font:inherit}
+.privacy-footer-links button{padding:0;border:none;background:transparent;text-decoration:underline;cursor:pointer}
+.privacy-page{max-width:900px;margin:auto}
+.privacy-page h2{font:400 clamp(26px,3.7vw,40px) Georgia,serif;margin:32px 0 10px}
+.privacy-page p,.privacy-page li{font-size:16px;line-height:1.75;color:#465579}
+.privacy-page a{text-decoration:underline;text-underline-offset:3px}
+@media(max-width:680px){.cookie-floating{bottom:72px;left:14px}.cookie-banner{padding:8px;max-height:92vh}.cookie-inner{padding:18px 15px}.cookie-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}.cookie-action{padding:10px 12px}.cookie-customize{grid-column:1/-1;grid-row:2}.cookie-heading{font-size:26px}.privacy-footer-links{gap:12px}}

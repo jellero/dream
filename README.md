@@ -46,3 +46,7 @@ La pagina Gamma & Bross valorizza un dato verificabile sul sito ufficiale del pr
 4. aggiungere favicon/logo definitivo e metadati social Open Graph;
 5. collegare analytics e conversion tracking solo dopo aver definito privacy/cookie policy;
 6. pubblicare con HTTPS e verificare sitemap/Search Console.
+
+## Privacy e cookie (30/10/2026)
+
+Meta Pixel 1734861030937993 viene caricato soltanto dopo consenso marketing esplicito. Banner con accettazione, rifiuto, personalizzazione, revoca e preferenze salvate localmente. Aggiunte pagine privacy.html e cookie-policy.html. Da validare con il titolare: identità e recapiti, tempi di conservazione, fornitori e cookie reali, trasferimenti e documentazione dei consensi.
