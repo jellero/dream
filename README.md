@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/logo.webp" alt="Dream Studio Design" width="360"></p>
+
 # Dream Studio Design — nuovo sito statico
 
 Frontend multipagina HTML/CSS/JS vanilla per il riposizionamento commerciale di Dream Studio Design.
@@ -31,6 +33,7 @@ Frontend multipagina HTML/CSS/JS vanilla per il riposizionamento commerciale di 
 
 ## Asset
 
+- `assets/logo.webp` — logo ufficiale Dream Studio Design, visualizzato su tutte le pagine
 - `assets/styles.css` — design system e responsive
 - `assets/site.js` — menu mobile, anno dinamico, form WhatsApp
 
@@ -43,7 +46,7 @@ La pagina Gamma & Bross valorizza un dato verificabile sul sito ufficiale del pr
 1. sostituire/integrare la gallery con fotografie e casi studio realmente realizzati da Dream Studio Design;
 2. inserire i link esatti agli account Facebook e Instagram ufficiali e importare solo immagini chiaramente riconducibili all'azienda;
 3. validare ragione sociale, email commerciale e testi legali;
-4. aggiungere favicon/logo definitivo e metadati social Open Graph;
+4. aggiornare la favicon e i metadati social Open Graph;
 5. collegare analytics e conversion tracking solo dopo aver definito privacy/cookie policy;
 6. pubblicare con HTTPS e verificare sitemap/Search Console.
 
